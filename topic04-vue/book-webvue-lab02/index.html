@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+<body>
+
+  
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic01-intro/book-js-lab01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+JS.Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic01-intro/book-js-lab02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+JS.Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic02-node/book-web-lab00/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Setup
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic02-node/book-web-lab01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic02-node/book-web-lab02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic03-node-mongo/book-web-lab03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic03-node-mongo/book-web-wheroku/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Deploy-to-heroku
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic04-vue/book-webvue-lab01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Vue-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic04-vue/book-webvue-lab02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad//topic04-vue/book-webvue-wfirebase/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Deploy-to-Firebase
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div uk-sticky>
+    <nav uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+          <li class="uk-active"><a href="../index.html">4: Vue.js </a></li>
+        </ul>
+      </div>
+
+
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
+          
+            <li><a href="#">Lab-05</a></li>
+          
+            <li><a href="#">01</a></li>
+          
+            <li><a href="#">02</a></li>
+          
+            <li><a href="#">03</a></li>
+          
+            <li><a href="#">04</a></li>
+          
+            <li><a href="#">05</a></li>
+          
+            <li><a href="#">Solution</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Lab 5 - DonationWeb 4.0 (MEAN Web App)</h1>
+<p>This lab involves adding some proper functionality to our Angular Web App - <strong>Donation 4.0</strong>.</p>
+<p>In this lab we&#39;ll add the ability to make a Donation, list all the Donations and be able to delete an individual Donation.</p>
+</li>
+      
+        <li> <h1>Objectives</h1>
+<p>In this Lab, you will be required to build the next version of our Donation Case Study Web App, called <strong>DonationWeb 4.0</strong>.  We will build on the previous lab, so you can either use your own version of <strong>DonationWeb 3.0</strong> or download the starter code <strong><a href="archives/donationweb-3.0.zip">here</a></strong>. In this version we will be updating our <strong>controllers</strong> and our <strong>factory</strong> to introduce some functionality into our Web App.  </p>
+<p>On completion of this lab you&#39;ll be able to</p>
+<ul>
+<li>list all donations</li>
+<li>add and delete a single donation</li>
+<li>be able to use <strong>callbacks</strong></li>
+<li>be able to use <strong>templates</strong></li>
+<li>be able to use the <strong>ng-view</strong>, <strong>ng-model</strong>, <strong>ng-repeat</strong> (and a few other) directives</li>
+</ul>
+</li>
+      
+        <li> <h1>Step 2 - Setup</h1>
+<p>First thing you should do is download the starter code (or the solution to the previous lab) <strong><a href="../zips/donationweb-3.0.zip">here</a></strong> and then extract it to your single parent folder for all your web app projects you created for the previous labs.</p>
+<p>It&#39;s not vital, but you should probably rename the extracted folder for your final version of DonationWeb.</p>
+<p>Before beginning any refactoring it&#39;s probably worth running the Web App, just to confirm it launches correctly and we see the expected navigation bar (as below).</p>
+<h2>Navigation Bar</h2>
+<p>Our Nav bar now has 5 links, and 2 buttons, like so</p>
+<p><img src="img/navbar.lab1.v3.png" alt=""></p>
+<p>So the rest of the lab involves adding functionality to allow the user to</p>
+<ul>
+<li><strong>Donate</strong></li>
+<li><strong>View All Donations</strong> and</li>
+<li><strong>Delete a Donation </strong></li>
+</ul>
+</li>
+      
+        <li> <h1>Step 3 - &#39;View All Donations&#39;</h1>
+<p>With any application that will be listing some data it&#39;s always a good idea to get the &#39;Display/list/View All&#39; option implemented first, if for no other reason, to confirm that what you have in the &#39;app&#39; can be viewed in the &#39;app&#39; and that you can confirm your &#39;add&#39; works pretty much instantly.</p>
+<p>So the first feature we&#39;ll implement is our <strong>&#39;View All Donations&#39;</strong> and list our &#39;donations&#39; we have stored on the Server (in the mongodb database). Before we start, have a look again at what we want our completed page to look like (or something similar).</p>
+<p><img src="img/donationwebapp1.jpg" alt=""></p>
+<p>We want to initially display the records (just so we know it works) on our page in the format above and also be able to delete the record (and eventually edit it). To achieve this we need to refactor our <strong>&#39;donationsController&#39;</strong> and <strong><em>request</em></strong> the list from the server - so let&#39;s do that.</p>
+<hr>
+<h2><strong><em>&#39;Requesting&#39;</em></strong> our List of Donations</h2>
+<p>Have a quick look again at your <strong>&#39;donationsController&#39;</strong>, just to familiarise yourself with the <strong>$scope</strong> object you&#39;ll be working with.</p>
+<p>Now, we need to somehow allow our &#39;donationsController&#39; make requests so that we can display it on our donations page. We can achieve this through <strong><em>Dependency Injection</em></strong> so to begin with, add the <strong>$http</strong> dependency to your existing controller like so</p>
+<p><img src="img/lab05.step3.1.png" alt=""></p>
+<p>and the following http call (within a <strong><em>findAll</em></strong> function)</p>
+<pre><code class="lang-javascript">function findAll() {
+        $http.get(&#39;/donations&#39;)
+            .success(function (data) {
+                $scope.donations = data;
+                console.log(data);
+            })
+            .error(function (data) {
+                console.log(&#39;Error: &#39; + data);
+            });
+    };</code></pre>
+<p>Be clear about what is happening here and how we use the <strong><em>$scope</em></strong> object to allow access in our <strong><em>view</em></strong> (our donations.ejs).</p>
+<p>Your completed <strong>donationsController</strong> should now look something like this</p>
+<p><img src="img/lab05.step3.2.png" alt=""></p>
+<hr>
+<h2>Displaying our &#39;List of Donations&#39;</h2>
+<p>Everything we need to display our list of donations is already implemented in our <strong>&#39;donations.ejs&#39;</strong> page (as per the solution) so test it out, but you should investigate how we actually achieve the rendering of the list and familarise yourself with the different <strong><em>angular directives</em></strong> used in the solution, below is an extract from the page but it&#39;s worth having a look at the complete html at some stage.</p>
+<p><img src="img/lab2.step3.2.png" alt=""></p>
+<p>You should pay particular attention to the following directives</p>
+<ul>
+<li><strong>ng-controller</strong></li>
+<li><strong>ng-repeat</strong></li>
+<li><strong>ng-click</strong></li>
+</ul>
+<p>and how we display the individual properties of each donation via the current <strong><em>scope</em></strong>.</p>
+<p>And as we&#39;re using</p>
+<pre><code class="lang-javascript">                console.log(data);</code></pre>
+<p>As a final test it&#39;s worth opening the Developer Console (will be different depending on which browser you&#39;re using) and view &#39;console&#39; output for example....</p>
+<p><img src="img/lab05.step3.3.png" alt=""></p>
+</li>
+      
+        <li> <h1>Step 4 - &#39;Donate&#39;</h1>
+<p>So now that we can display a list of the donations currently on the server, the second feature we&#39;ll implement is our <strong>&#39;Donate&#39;</strong> option where the user can choose an <em>amount</em> and a <em>payment type</em>. Before we start, have a look again at what we want our completed page to look like</p>
+<p><img src="img/donationwebapp2.jpg" alt=""></p>
+<p>There&#39;s a bit more work involved to get this feature implemented, so the first thing we&#39;ll do is write a function to allow us to <em>add</em> a donation to our list (stored on the server).</p>
+<hr>
+<h2><strong><em>&#39;Posting&#39;</em></strong> a single Donation</h2>
+<p>Open up your <strong>donateController</strong> and <em>inject</em> the necessary dependencies so that your controller looks like the following</p>
+<p><img src="img/lab05.step3.4.png" alt=""></p>
+<p>Now we need to implement a function which will &#39;add&#39; (or post) a donation made, to the server. Here&#39;s the majority of the code you need, but try and work out what you need to complete the function (fill in the [...]&#39;s) and where to put it.</p>
+<pre><code class="lang-javascript">$scope.addDonation = function(){
+        $scope.[...] = ...;
+        $http.post(&#39;/donations&#39;, ...)
+            .success(function(data) {
+                $scope.[...] = data;
+
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log(&#39;Error: &#39; + data);
+            });
+    };</code></pre>
+<p>The next step is to somehow &#39;wire up&#39; the click of the Donate Button on our view, with the add function you just implemented - we&#39;ll achieve this through a <strong><em>callback function</em></strong>.</p>
+<hr>
+<h2>Updating our <em>donateController</em> - the &#39;addDonation&#39; Callback</h2>
+<p>Firstly, have a look at our existing donate.ejs page, and specifically our form</p>
+<p><img src="img/lab2.step4.1.png" alt=""></p>
+<p>what function gets triggered when the Donate Button is clicked (when the form is submitted)?</p>
+<p>Also, what form <strong>data</strong> is submitted (look for the <strong>ng-model</strong> directives)?</p>
+<p>This is the information you need to write the callback function within the controller.</p>
+<p>Once you&#39;ve completed the &#39;add&#39; feature, you&#39;ll notice that you must manually select the &#39;View All Donations&#39; link to see your newly added donation. To make thinks a bit more user-friendly we can use the <strong><em>$location</em></strong> object to <em>automatically</em> redirect the user to the page we want.</p>
+<p>So see if you can get that working?</p>
+<p>once you add a donation you should be redirected to the relevant page. Again, just be clear about how this is achieved before moving on to the next step (which also includes the solution!)</p>
+</li>
+      
+        <li> <h1>Step 5 - &#39;Delete&#39; and &#39;UpVotes&#39;</h1>
+<p>Now that we can display a list of our donations and add an individual donation, the final features we need implement (at this stage anyway) is our <strong>&#39;Delete&#39;</strong> option where the user can <em>Remove</em> a single donation and also give a donation the <em>thumbs Up</em> or increase its <strong>UpVotes</strong>. Before we continue, firstly, here&#39;s the solution to the previous step, and what your <strong>donateController</strong> should look like;</p>
+<p><img src="img/lab05.step3.5.png" alt=""></p>
+<p>And secondly, have a look again at what our donations page looks like</p>
+<p><img src="img/donationwebapp1.jpg" alt=""></p>
+<p>What we need to do here is write 2 functions, one called <strong>delete</strong> to <em>delete</em> a donation and another called <strong>incrementUpvotes</strong> to increase its <em>upvotes</em> property - both of which need to be added to our <strong>donationsController</strong>.</p>
+<hr>
+<h2>Updating our <em>donationsController</em> - the &#39;deleteDonation&#39; Callback</h2>
+<p>Firstly, have a look at our existing donations.ejs page, and specifically the <strong>ng-click</strong> directives associated with the delete button and the &#39;thumbs Up&#39; glyphicon.</p>
+<p><img src="img/lab05.step3.6.png" alt=""></p>
+<p>These are the functions you need to write within the donations controller.</p>
+<p>To help you along, you need to add the following function to the controller - which you need to complete.</p>
+<pre><code class="lang-javascript">  $scope.delete = function(id) {
+      if (confirm(&quot;Are you sure you want to delete this Donation?&quot;)) {
+              console.log(&#39;Deleting id : &#39; + id);
+        //Write your &#39;delete&#39; request here
+          }
+    };</code></pre>
+<p>Once you&#39;ve completed the &#39;delete&#39; feature, save the file and test it out by adding, and then deleting a few donations.</p>
+<hr>
+<h2>Updating our <em>donationsController</em> - the &#39;incrementUpvotes&#39; Callback</h2>
+<p>The last feature to implement is to give a particular donation the <em>thumbs Up</em>, by implementing the <strong>incrementUpvotes</strong> function in our <strong>controller</strong>.</p>
+<p>Here&#39;s the stater code...</p>
+<pre><code class="lang-javascript">$scope.incrementUpvotes = function(id){
+          //Write your &#39;put&#39; request here
+          }</code></pre>
+<p><strong>Observe what happens when you click on the thumb icon.... and more importantly how does it work</strong></p>
+<hr>
+<p>As a wrap up, your completed <strong>controller</strong> should look like this</p>
+<p><img src="img/lab05.step3.7.png" alt=""></p>
+<h2>Well Done!!</h2>
+</li>
+      
+        <li> <h1>Solution - Lab 5</h1>
+<p>You can find the solution to this lab <strong><a href="archives/donationweb-4.0.zip">here</a></strong>.</p>
+</li>
+      
+    </ul>
+  </div>
+</body>
