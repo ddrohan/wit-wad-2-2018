@@ -71,7 +71,7 @@ h3 {
           
             
               <li>
-                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//topic01-intro/book-dev-setup/index.html">
+                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//topic00-profile/book-dev-setup/index.html">
   <i class="fas fa-flask " style="color:#00BCD4"> </i>
 Setup
                 </a>
@@ -245,6 +245,15 @@ Deploy-to-Firebase
 <p>you should see your first Vue Web App, like so</p>
 <p><img src="img/labvue0106.png" alt=""></p>
 <p><strong>Well Done!!</strong></p>
+<p>NOTE : IF YOU GET AN ERROR ALONG THE LINES OF</p>
+<pre><code>BrowserslistError: Unknown browser query `dead`</code></pre>
+<p>THEN YOU NEED TO FOLLOW THESE STEPS</p>
+<ol>
+<li>Open &#39;package.json&#39; of &#39;\node_module\bootstrap&#39;</li>
+<li>Find &#39;browserlist&#39;</li>
+<li>In the List Array, you will notice &quot;not dead&quot; - DELETE THIS</li>
+<li>Done :)</li>
+</ol>
 <p>The next few steps involve &#39;customising&#39; this app to look like this</p>
 <p><img src="img/labvue01complete.png" alt=""></p>
 </li>
