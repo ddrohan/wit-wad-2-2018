@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -36,6 +38,7 @@ pre code {
 
 img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
 }
 
 h1, h2, h3 {
@@ -60,9 +63,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -71,7 +75,7 @@ h3 {
           
             
               <li>
-                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//topic00-profile/book-dev-setup/index.html">
+                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//unit-1/book-dev-setup/index.html">
   <i class="fas fa-flask " style="color:#00BCD4"> </i>
 Setup
                 </a>
@@ -80,7 +84,7 @@ Setup
           
             
               <li>
-                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//topic01-intro/book-js-lab01/index.html">
+                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//unit-1/book-js-lab01/index.html">
   <i class="fas fa-flask " style="color:#00BCD4"> </i>
 JS.Lab-01
                 </a>
@@ -89,7 +93,7 @@ JS.Lab-01
           
             
               <li>
-                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//topic01-intro/book-js-lab02/index.html">
+                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//unit-1/book-js-lab02/index.html">
   <i class="fas fa-flask " style="color:#00BCD4"> </i>
 JS.Lab-02
                 </a>
@@ -102,44 +106,48 @@ JS.Lab-02
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">1: Overview </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+             }}
+              <li class="uk-active"><a href="../../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                       pos="bottom" uk-tooltip>Introduction & Background </a></li>
+            
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">JS.Lab-02</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">JS.Lab-02</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>JavaScript Lab 2 - Functions &amp; Callbacks</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>JavaScript Lab 2 - Functions &amp; Callbacks</h1>
 <p>In these labs we&#39;re going to build a very simple Console Version of our Node Web App (while we learn about Web Apps) using <strong>WebStorm</strong>.</p>
 <p>If you haven&#39;t done so already, download Atom <a href="https://atom.io">here</a> . This app won&#39;t have any web functionality at all but it will take you through a brief look at using javascript and callbacks in a Node Console App.</p>
 <p>Once completed and running via WebStorm, your App Menu will look something like this</p>
 <p><img src="img/jslab201complete.png" alt=""></p>
 </li>
-      
-        <li> <h1>Objectives</h1>
+        
+          <li> <h1>Objectives</h1>
 <p>In this Lab, you will continue to build a simple Node Console App (using WebStorm), called <strong>DonationWeb.0.1</strong>.  We will use the WebStorm IDE just to get used to using the environment.</p>
 <p>On completion of this lab you&#39;ll be able to</p>
 <ul>
@@ -148,8 +156,8 @@ JS.Lab-02
 <li>implement some simple JavaScript Callback functions</li>
 </ul>
 </li>
-      
-        <li> <h1>Step 2 - Adding &amp; Finding a Donation</h1>
+        
+          <li> <h1>Step 2 - Adding &amp; Finding a Donation</h1>
 <p>We&#39;re going to continue with our <strong>DonationWeb.0.1</strong> console app and in this step we&#39;ll look at adding a Donation to our existing list and allow our updated list to be searched for a particular donation. Remember though, this will only exist for the duration of the app running (but we&#39;ll introduce persistence later on in the module).</p>
 <p>First thing to do is open up your existing project (if you haven&#39;t done so already) and run it again, to ensure everything is working ok.</p>
 <p>Next, add the following &#39;helper function&#39; to your <strong>index.js</strong> to allow us to search for (or filter out) a single donation from our array of donations</p>
@@ -188,8 +196,8 @@ JS.Lab-02
 <p>so the user sees something like this</p>
 <p><img src="img/jslab202.png" alt=""></p>
 </li>
-      
-        <li> <h1>Step 3 - Deleting a Donation</h1>
+        
+          <li> <h1>Step 3 - Deleting a Donation</h1>
 <p>To delete a donation we&#39;ll make use of another &#39;helper&#39; method - remove()</p>
 <pre><code class="lang-JS">function remove(array, element) {
       const index = array.indexOf(element);
@@ -211,8 +219,8 @@ JS.Lab-02
 <p>so that we have something like this - note we display the list of donations before AND after the deletion.</p>
 <p><img src="img/jslab203.png" alt=""></p>
 </li>
-      
-        <li> <h1>Step 4 - Solution Source Code</h1>
+        
+          <li> <h1>Step 4 - Solution Source Code</h1>
 <pre><code class="lang-JS">const chalk         = require(&#39;chalk&#39;);
 const readlineSync  = require(&#39;readline-sync&#39;);
 
@@ -319,7 +327,25 @@ function displayMenu() {
 
 displayMenu();</code></pre>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
