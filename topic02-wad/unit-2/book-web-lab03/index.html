@@ -77,7 +77,7 @@ h3 {
               <li>
                 <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//unit-1/book-dev-setup/index.html">
   <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Setup-Dave's MBP
+Setup
                 </a>
               </li>
             
@@ -171,8 +171,6 @@ Lab-Vue-01
             
               <li><a href="#">01</a></li>
             
-              <li><a href="#">02-Dave's MBP</a></li>
-            
               <li><a href="#">02</a></li>
             
               <li><a href="#">03</a></li>
@@ -182,8 +180,6 @@ Lab-Vue-01
               <li><a href="#">05</a></li>
             
               <li><a href="#">06</a></li>
-            
-              <li><a href="#">07-Dave's MBP</a></li>
             
               <li><a href="#">07</a></li>
             
@@ -214,55 +210,6 @@ Lab-Vue-01
 <ul>
 <li>store data in a <strong>MongoDB</strong> database</li>
 </ul>
-</li>
-        
-          <li> <h1>Step 2 - Setup</h1>
-<p>First thing you should do is download the starter code (or the solution to the previous lab) <strong><a href="../zips/donationweb-2.0.zip">here</a></strong> and then extract it to your single parent folder for all your web app projects you created for previous labs.</p>
-<p>Rename the extracted folder, (or copy your own version) to <strong>donationweb-3.0</strong></p>
-<p>Open your <strong>donationweb-3.0</strong> web app (in WebStorm) and then change your &#39;title&#39; like so</p>
-<p><img src="img/lab03s01.png" alt=""></p>
-<p>and launch it.</p>
-<p>You may not get any errors, but you should probably reconfigure your project (as it&#39;s a copy) and confirm the <strong>node modules</strong> path as follows:</p>
-<p>Open your preferences and navigate to the <strong>Library</strong> settings and update your <strong>node_modules</strong> path to point to the current project if necessary.</p>
-<p><img src="img/lab03s02.png" alt=""></p>
-<p>Launch again, if everything goes to plan you should be able to visit <a href="http://localhost:3000"><a href="http://localhost:3000">http://localhost:3000</a></a> and you should see something like the following:</p>
-<p><img src="img/lab03s03.png" alt=""></p>
-<p>The next thing to do is to add the <strong>mongodb</strong> and <strong>mongoose</strong> module dependencies to our project, which WebStorm can help us with (as we did in Lab 01)</p>
-<p><img src="img/lab03s04.png" alt=""></p>
-<p>If you want to go old school, you can manually install like so</p>
-<pre><code>npm install mongoose</code></pre>
-<p>and</p>
-<pre><code>npm install mongodb</code></pre>
-<p>Confirm your node_modules now includes the following:</p>
-<p><img src="img/lab03s05.png" alt=""></p>
-<p>The last step in our &#39;Setup&#39; is to kick off our localhost mongodb server and insert a few &#39;Donations&#39; so we can test our refactored &#39;findAll&#39; function (next step).</p>
-<p>Open up a terminal window and launch the mongodb server</p>
-<p><img src="img/lab03s06.png" alt=""></p>
-<p><img src="img/lab03s07.png" alt=""></p>
-<p>Open another, separate terminal window and launch the client</p>
-<p><img src="img/lab03s08.png" alt=""></p>
-<p><img src="img/lab03s09.png" alt=""></p>
-<p><img src="img/lab03s10.png" alt=""></p>
-<p>In the client window,</p>
-<ul>
-<li>create/switch to the <strong>&#39;donationsdb&#39;</strong> database</li>
-<li>insert a few records (similar to the screenshots) and make sure you name your collection <strong>donationsdb</strong> and <strong>NOT</strong> donations.</li>
-</ul>
-<p><img src="img/lab03s11.png" alt=""></p>
-<p>To confirm the records were inserted correctly execute a <strong>find()</strong></p>
-<pre><code>db.donationsdb.find()</code></pre>
-<p><img src="img/lab03s12.png" alt=""></p>
-<p><img src="img/lab03s13.png" alt=""></p>
-<p>We now have a few records or &#39;documents&#39; we can access via our Node Web Server (next step).</p>
-<p>If you have no &#39;option&#39; to run your app, you may have to reconfigure the &#39;Run/Debug&#39; settings so select &#39;Edit Configurations&#39; and you&#39;ll get this screen</p>
-<p><img src="img/lab03s14.png" alt=""></p>
-<p>then (as instructed) click the + button to add a new configuration - select &#39;Node&#39; and your are presented with this screen</p>
-<p><img src="img/lab03s15.png" alt=""></p>
-<p>Populate your settings similar to what&#39;s below</p>
-<p><img src="img/lab03s17.png" alt=""></p>
-<p><img src="img/lab03s16.png" alt=""></p>
-<p>And run your app to get</p>
-<p><img src="img/lab03s18.png" alt=""></p>
 </li>
         
           <li> <h1>Step 2 - Setup</h1>
@@ -522,22 +469,7 @@ module.exports = mongoose.model(&#39;Donation&#39;, DonationSchema);</code></pre
 </li>
         
           <li> <h1>Step 7 - mlab.com Support</h1>
-<p>If you haven&#39;t done so already, head over to <a href="http://www.mlab.com">www.mlab.com</a> and set up your database. You can follow a quick guide to my own setup here <a href="https://ddrohan.github.io/wit-wad/topic02-node/book-web-lab00/index.html">mlab setup</a>.</p>
-<p>Now, create a new mongod connection in your <strong>routes/donations</strong> file like so</p>
-<pre><code class="lang-javascript">var mongodbUri =&#39;mongodb://&lt;user&gt;:&lt;password&gt;@ds255260.mlab.com:55260/donationsdb&#39;;</code></pre>
-<p>and connect using this connection instead of your localhost Connection</p>
-<pre><code class="lang-javascript">mongoose.connect(mongodbUri);</code></pre>
-<p><strong>NOTE - this is my own connection string, so you will need to grab your own connection from your mlab account and use the username/password you set up to access your database</strong></p>
-<p>You should run your app to confirm you can connect to your remote mongodb database before proceeding.</p>
-<p>Once you&#39;re connecting ok, you should then insert a few records and retrieve them, just to confirm everything is working ok and then verify this against your mlab account</p>
-<h3>Testing Our mlab Connection</h3>
-<p><img src="img/lab03s40.png" alt=""></p>
-<p><img src="img/lab03s41.png" alt=""></p>
-<p><img src="img/lab03s42.png" alt=""></p>
-</li>
-        
-          <li> <h1>Step 7 - mlab.com Support</h1>
-<p>If you haven&#39;t done so already, head over to <a href="http://www.mlab.com">www.mlab.com</a> and set up your database. You can follow a quick guide to my own setup here <a href="https://ddrohan.github.io/wit-wad-2-2018/topic01-intro/book-dev-setup/index.html">mlab setup</a>.</p>
+<p>If you haven&#39;t done so already, head over to <a href="http://www.mlab.com">www.mlab.com</a> and set up your database. You can follow a quick guide to my own setup here <a href="https://ddrohan.github.io/wit-wad-2-2018/topic01-intro/unit-1/book-dev-setup/index.html">mlab setup</a>.</p>
 <p>Now, create a new mongod connection in your <strong>routes/donations</strong> file like so</p>
 <pre><code class="lang-javascript">var mongodbUri =&#39;mongodb://&lt;user&gt;:&lt;password&gt;@ds255260.mlab.com:55260/donationsdb&#39;;</code></pre>
 <p>and connect using this connection instead of your localhost Connection</p>
