@@ -329,6 +329,21 @@ export default {
 <p>Be sure you understand what&#39;s going on here as you&#39;ll be adding to these files later on.</p>
 <p>We want to initially display the records (just so we know it works) on our page in basic JSON format so have a go at something along the lines of the following</p>
 <p><img src="img/labvue0204.png" alt=""></p>
+<h2>| NOTE ON POSSIBLE CORS ERROR |</h2>
+<p> | If you get                 |
+ |</p>
+<table>
+<thead>
+<tr>
+<th><code>NOTE ON POSSIBLE *CORS* ERROR</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If you get a <code>CORS</code> error then you&#39;ll need to <code>1. revisit your Node Server</code> <code>2.</code> install and <em>require</em> the <code>cors</code> module and then <code>3. app.use(cors())</code> in your <code>app.js</code></td>
+</tr>
+</tbody>
+</table>
 <h2>Displaying our &#39;List of Donations&#39;</h2>
 <p>Once we have requested our JSON donation data the next step is to display them properly in a table, specifically a <strong>v-client-table</strong> so first we need to add another dependency <strong>vue-tables-2</strong> (<strong>NOT</strong> vue-tables) - do that now.</p>
 <p>In your &#39;Donations.vue&#39;, add the following</p>
