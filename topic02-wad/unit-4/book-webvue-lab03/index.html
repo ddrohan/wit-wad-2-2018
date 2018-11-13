@@ -336,7 +336,7 @@ upvote: function (id) {
        showLoaderOnConfirm: true
      }).then((result) =&gt; {
        console.log(&#39;SWAL Result : &#39; + result)
-       if (result.value === true) {
+       if (result === true) {
          DonationService.deleteDonation(id)
            .then(response =&gt; {
              // JSON responses are automatically parsed.
