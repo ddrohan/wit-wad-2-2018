@@ -426,7 +426,7 @@ paymenttype: &#39;Direct&#39;,
 amount: 0,
 upvotes: 0,
 donation: {}</code></pre>
-<p>and this function, to the &#39;methods&#39; section</p>
+<p>and this function, to the <code>methods:</code> section of your Component</p>
 <pre><code class="lang-js">submitDonation: function (donation) {
       DonationService.postDonation(donation)
         .then(response =&gt; {
@@ -443,7 +443,7 @@ donation: {}</code></pre>
 <pre><code class="lang-js">import { required, minLength, between } from &#39;vuelidate/lib/validators&#39;</code></pre>
 <p>add the following to your &#39;data()&#39;</p>
 <pre><code class="lang-js">submitStatus: null</code></pre>
-<p>add the following &#39;validations&#39; to your export</p>
+<p>add the following <code>validations:</code> to your export</p>
 <pre><code class="lang-js">validations: {
     message: {
       required,
@@ -454,7 +454,7 @@ donation: {}</code></pre>
       between: between(1, 1000)
     }
   },</code></pre>
-<p>and add the following to your &#39;methods&#39;</p>
+<p>and add the following to your <code>methods:</code> section inside your <code>Donate</code> Component</p>
 <pre><code class="lang-js">submit () {
    console.log(&#39;submit!&#39;)
    this.$v.$touch()
