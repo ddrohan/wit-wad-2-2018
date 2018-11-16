@@ -674,13 +674,21 @@ export default {
         
           <li> <h1>Step 5 - &#39;A New Look&#39;</h1>
 <p>As a final step, we&#39;ll give our Vue Web App a bit of a &#39;face lift&#39; :) and sort out the issue with filtering on all table columns.</p>
-<p>First, open up your &#39;App.vue&#39; and add the following to the &#39;app/styles&#39; section</p>
-<pre><code class="lang-html">~~~
-
-Next, open up your &#39;Donations.vue&#39; and add the following to the &#39;options:&#39;
-
-~~~js
-perPage: 10,
+<p>First, open up your &#39;App.vue&#39; and replace the following in the &#39;app/styles&#39; section</p>
+<pre><code class="lang-js">#app {
+  font-family: &#39;Avenir&#39;, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  padding-top: 20px;
+  background: url(&quot;./assets/homerbgyellow.png&quot;) repeat center top;
+}
+.VueTables__sortable {
+  cursor: pointer;
+}</code></pre>
+<p>Next, open up your &#39;Donations.vue&#39; and add the following to the &#39;options:&#39;</p>
+<pre><code class="lang-js">perPage: 10,
 filterable: [&#39;paymenttype&#39;, &#39;amount&#39;, &#39;upvotes&#39;]</code></pre>
 <p>This will ensure the user can only &#39;filter&#39; on the listed columns. Also we can set the number of rows per page here, the default is 10 anyway, but now we can change it to whatever we like.</p>
 <p>As an exercise, create a new <strong>VFooter</strong> component that displays a simple message to the user which can be used as a &#39;footer&#39; message on all the different pages</p>
