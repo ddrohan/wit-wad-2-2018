@@ -342,6 +342,7 @@ export default {
 </tr>
 </tbody>
 </table>
+<p><strong>ALSO - If you have been &#39;stringifying&#39; your JSON on your server i.e. calling JSON.stringfy(), this returns a string NOT a JSON ARRAY (which your Vue Client Expects) so you&#39;ll need to remove this and just send back the raw data in your result to avoid a wrong type expected error when trying to display your data in your Vue table</strong></p>
 <h2>Displaying our &#39;List of Donations&#39;</h2>
 <p>Once we have requested our JSON donation data the next step is to display them properly in a table, specifically a <strong>v-client-table</strong> so first we need to add another dependency <strong>vue-tables-2</strong> (<strong>NOT</strong> vue-tables) - do that now.</p>
 <p>In your &#39;Donations.vue&#39;, add the following</p>
