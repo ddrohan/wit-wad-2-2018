@@ -163,6 +163,15 @@ Lab-Vue-03
               </li>
             
           
+            
+              <li>
+                <a class="item" href="http://ddrohan.github.io/wit-wad-2-2018//unit-5/book-webvue-wfirebase/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Deploy-to-Firebase
+                </a>
+              </li>
+            
+          
         </ul>
       </div>
     </div>
@@ -336,7 +345,7 @@ upvote: function (id) {
        showLoaderOnConfirm: true
      }).then((result) =&gt; {
        console.log(&#39;SWAL Result : &#39; + result)
-       if (result === true) {
+       if (result.value === true) {
          DonationService.deleteDonation(id)
            .then(response =&gt; {
              // JSON responses are automatically parsed.
